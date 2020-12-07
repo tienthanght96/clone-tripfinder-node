@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.dev
+
+    working_dir: /app
+    env_file: ".env"
+
+    environment:
+      NODE_PATH: /app
+      NODE_ENV: development
+      PORT: 3000
+  mysql:
+    image: mysql:5.7.22
+    env_file: ./.env
+    container_name: mysql
+    command: --explicit_defaults_for_timestamp --sql_mode=""
+    environment:
+      MYSQL_ROOT_PASSWORD: thangtran
+      MYSQL_DATABASE: test
+    ports:
+      - 3306:3306

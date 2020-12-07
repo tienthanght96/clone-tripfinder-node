@@ -1,0 +1,29 @@
+{
+  "env": {
+    "es2020": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["standard"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "space-before-function-paren": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "objects": "always-multiline",
+        "arrays": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "no-unused-vars": 0,
+    "@typescript-eslint/no-unused-vars": "error"
+  }
+}
